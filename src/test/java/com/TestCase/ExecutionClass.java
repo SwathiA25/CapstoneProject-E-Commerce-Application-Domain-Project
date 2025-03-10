@@ -52,7 +52,7 @@ public class ExecutionClass {
 	public void signupNew() throws InterruptedException {
 		
 		Thread.sleep(3000);
-		homePage.signupPage("test@615", "Pass1245");
+		homePage.signupPage("test@625", "Pass1245");
 		Screenshot.captureScreenshot(driver, "signup_screenshot");
 		System.out.println("SignUp Successful");
 	}
@@ -61,12 +61,12 @@ public class ExecutionClass {
 	public void login() throws InterruptedException {
 		
 		Thread.sleep(3000);
-		homePage.loginPage("test@615", "Pass1245");
+		homePage.loginPage("test@625", "Pass1245");
 		Thread.sleep(3000);
 		WebElement loginName = driver.findElement(By.id("nameofuser"));
 		Assert.assertTrue(loginName.isDisplayed());
 		Thread.sleep(3000);
-		if (loginName.getText().contains("test@615")) {
+		if (loginName.getText().contains("test@625")) {
 			System.out.println("Login Successful");
 			Screenshot.captureScreenshot(driver, "login_success_screenshot");
 		    extentreport.logPass("Login successful");
@@ -80,13 +80,13 @@ public class ExecutionClass {
 	@Test(priority = 3)
 	public void checkout() throws InterruptedException {
 		
-		homePage.loginPage("test@615", "Pass1245");
+		homePage.loginPage("test@625", "Pass1245");
 		addtoCart.productselection();
 		addtoCart.checkout("Test", "USA", "Newyork", "12345678", "12", "2025");
 		Thread.sleep(3000);
 		Assert.assertTrue(driver.findElement(By.xpath("//h2[normalize-space()='Thank you for your purchase!']")).isDisplayed());
 		System.out.println("Order Placed Successfully");
-		Screenshot.captureScreenshot(driver, "checkout_screenshot");
+		Screenshot.captureScreenshot(driver, "order_summery_screenshot");
 	}
 
 	@AfterMethod

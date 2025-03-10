@@ -60,7 +60,12 @@ public class HomePage {
 	
 	public void signupPage(String UN,String Pass)
 	{
-		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		getSignup().click();
 		getSignupName().sendKeys(UN);
 		getSignupPass().sendKeys(Pass);
@@ -84,6 +89,12 @@ public class HomePage {
 	
 	public void loginPage(String UN,String Pass)
 	{
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		getLogin().click();
 		getUserName().sendKeys(UN);
 		getPass().sendKeys(Pass);
